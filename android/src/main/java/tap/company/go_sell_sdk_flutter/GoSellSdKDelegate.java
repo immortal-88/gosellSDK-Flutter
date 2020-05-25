@@ -401,6 +401,10 @@ public class GoSellSdKDelegate implements PluginRegistry.ActivityResultListener,
     @Override
     public void sessionCancelled() {
         Log.d("MainActivity", "Session Cancelled.........");
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("sdk_result", "CANCELLED");
+        pendingResult.success(resultMap);
+        pendingResult = null;
     }
 
     @Override
